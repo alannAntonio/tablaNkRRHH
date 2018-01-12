@@ -1,0 +1,272 @@
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+    body{
+      font-family: 'Open Sans', sans-serif;
+    }
+    .container-main-table, .container-second-table{
+      width: 90%;
+      position: relative;
+      margin: 0px auto;
+      font-size: 1em;
+    }
+    @media only screen and (max-width: 600px){
+      .container-main-table, .container-second-table{
+        font-size: 0.8em;
+        width: 100%;
+      }
+    }
+    @media only screen and (max-width: 400px){
+      .container-main-table, .container-second-table{
+        font-size: 0.6em;
+        width: 100%;
+      }
+    }
+    .container-second-table{
+      display: none;
+    }
+    .toggle-button{
+      width: calc(90% - 18px);
+      cursor: pointer;
+      padding: 15px 15px 15px 5px;
+      font-weight: bolder;
+      margin: 20px auto;
+      border-radius: 4px;
+    }
+    .toggle-button:hover{
+      background-color: #DCDFE0;
+    }
+    .toggle-button h4{
+      display: inline;
+      margin-right: 20px;
+    }
+    .border-tbody-main{
+      width: calc(70% - 22px);
+      height:100%;
+      left: calc(30% + 20px);     
+      border: 2px solid #e5ecef;
+      position: absolute;
+      z-index: 1;
+      border-radius: 10px;
+    }
+    @media only screen and (max-width: 900px){
+      .border-tbody-main{
+        width: 100%;
+        left:0;
+      }
+    }
+    .tabla-principal, .tabla-secundaria{
+      position: relative;
+      z-index: 2;
+      table-layout: fixed;
+      border-collapse: collapse;
+      width: 100%;
+      color: #475155;
+      }
+    .title-1{
+      height: 50px;
+    }
+    .tabla-principal tr, .tabla-secundaria tr{
+      border-bottom:1px solid #e5ecef;
+      height: 60px;
+    }
+    .tabla-principal tr th, .tabla-secundaria tr th{
+      width: 30%;
+      padding: 15px 15px 15px 5px;
+      text-align: left;
+    }
+    @media only screen and (max-width: 900px){
+      .tabla-principal tr th, .tabla-secundaria tr th{
+      display: none;
+      }      
+    }
+    .tabla-principal tr td, .tabla-secundaria tr td{
+      padding: 4px;
+      text-align: center;
+    }
+    @media only screen and (max-width: 900px){
+      .tabla-principal tr td, .tabla-secundaria tr td{
+        padding: 2px;
+        text-align: center;
+        width: 100%;
+      }
+    }
+    #mth{     
+      display: none;
+      font-weight: bolder;
+      width:400%;
+      text-align: center;
+    }
+    #mth td{
+      height: 45px;
+    }
+    @media only screen and (max-width: 900px){
+      #mth{
+        display:block;
+      }
+    }
+    .last-tr{
+      border-bottom: none !important;
+    }
+    .sub-title1{
+      background-color: #f3f6f8;
+      color: #6e828c;
+    }
+    .sub-title2{
+      background-color: #f3f6f8;
+      color: #6e828c;
+      border-left: 1px solid #e5ecef;
+    }
+    .plan-title{
+      font-weight: bolder;
+      height: 100px !important;
+    }
+    .mas-pedido{
+      position: relative;
+    }
+    .mas-pedido-sign{
+      position: absolute;
+      background-color: #D0FF28;
+      font-weight: lighter;
+      color: #000000;
+      font-size: 0.9em;
+      padding: 5px;
+      top: -50px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-radius: 5px;
+    }
+    .flecha-sign{
+      width: 0px;
+      height: 0px;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-top: 15px solid #D0FF28;
+      position: absolute;
+      left: 0px;
+      right:0px;
+      margin: auto;
+    }
+    .si,.no{
+      width: 24px;
+      height: 24px;
+      margin: 0px auto;
+      border-radius: 15px;
+      text-align: center;
+      font-weight: bolder;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;  
+    }
+    .si{
+      background-color: #E2A243;
+    }
+    .no{
+      background-color: #999999;
+    } 
+    #activate-text{
+      color: #E2A243;
+      display: inline-block;
+    }
+    #disabled-text{
+      color: #ccc;
+      display: inline-block;
+    }
+    .switch-place{ 
+    } 
+    .switch-container{
+      position: absolute;
+      z-index: 3;           
+      text-align: center;
+      display: none;
+      width: calc(70% - 20px);
+      margin-left: calc(30% + 20px );
+    }
+    @media only screen and (max-width: 900px){
+      .switch-container{
+        width: 100%;
+        margin: 0px auto;
+      }
+    }  
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      cursor: pointer;
+      top: 10px;
+      margin: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+    .switch input {
+      display: none;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #E2A243;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before{
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+    .btn-plan{      
+      background-color: #C73C20;
+      padding: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #FFFFFF;
+    }
+    .btn-plan:hover{
+      background-color: #8F2B17;
+    }
+    .btn-consultar{
+      background-color: #0A9BFC;
+      color: #FFFFFF;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 6px;
+      max-width: 300px;
+      margin: 0px auto;
+    }
+    .btn-consultar:hover{
+      background-color: #0772BA;
+      cursor: pointer;
+    }

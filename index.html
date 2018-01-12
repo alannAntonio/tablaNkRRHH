@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var trA, trB, trC;
+    $(function(){   
+      alinear();
+      $(".software").stop().animate({opacity:"1"},500);
+      $(".servicio").stop().animate({opacity:"0.2"},500);
+      $('.btn').attr('checked',false);
+      $(".switch").click(function(){
+        if($('.btn').prop('checked')){
+          $(".software").stop().animate({opacity:"0.2"},500);
+          $(".servicio").stop().animate({opacity:"1"},500);
+        }else{
+           $(".software").stop().animate({opacity:"1"},500);
+          $(".servicio").stop().animate({opacity:"0.2"},500);
+        }
+      });
+      $(".toggle-button").click(function(){
+          $(".container-second-table").toggle(500);   
+      }); 
+      $('.btn-consultar').click(function(){		      
+	    $('html, body').animate({
+	      scrollTop: 0
+	    }, 1000);		        
+	  });        
+    })
+
+    $(window).resize(function(){
+      alinear();
+    })
+    function alinear(){
+      trA = $(".tabla-principal").children().children("tr:eq(0)").height();
+      trB = $(".tabla-principal").children().children("tr:eq(2)").height();
+      trC = $(".tabla-principal").children().children("tr:eq(3)").height();
+      tam = trA + 5;
+      $(".switch-container").css("top", tam+"px");
+      $(".switch-container").delay(800).fadeIn(800);
+    } 
+  </script>
+</head>
+<body>
+  <div class="container-main-table">
+  	<div class="switch-container">
+	    <p id="disabled-text">Software</p>
+	    <label class="switch">
+	      <input class="btn" type="checkbox">
+	      <span class="slider round"></span>
+	    </label>
+	    <p id="activate-text">Servicio</p>
+	</div>
+    <div class="border-tbody-main">
+    </div>
+    <table class="tabla-principal">
+      <tr>
+        <th></th>
+        <td colspan="4">Nuestro cobro será de acuerdo al tamaño de tu empresa pues cobramos en función de la cantidad de trabajadores activos mes a mes.</td>    
+      </tr>       
+      <tr>
+        <th></th>
+        <td colspan="4" class="switch-place"></td>        
+      </tr>            
+      <tr class="tr-empty">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr class="plan-title">
+        <th>Plan</th>
+        <td><div class="btn-plan">Software <br> Básico</div></td>
+        <td><div class="mas-pedido"><div class="mas-pedido-sign">¡Más pedido!<div class="flecha-sign"></div></div><div class="btn-plan">Software<br> Premium</div></div></td>
+        <td><div class="btn-plan">Outsourcing <br>Básico</div></td>
+        <td><div class="mas-pedido"><div class="mas-pedido-sign">¡Más pedido!<div class="flecha-sign"></div></div><div class="btn-plan">Outsourcing<br> Premium</div></div></td>
+      </tr>
+      <tr>
+        <th>Valor Plan UF por liquidación mensual</th>
+        <td colspan="4"><div class="btn-consultar">Consultar Precio</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Cantidad de usuarios</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Cantidad de usuarios</th>
+        <td class="software">2</td>
+        <td class="software">Ilimitado</td>
+        <td class="servicio">Ilimitado</td>
+        <td class="servicio">Ilimitado</td>
+      </tr>
+      <tr id="mth">      
+        <td>Acceso desde cualquier navegador web (Versión Cloud)</td>
+        <td></td>        
+      </tr>
+      <tr >
+        <th>Acceso desde cualquier navegador web (Versión Cloud)</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Asesor laboral designado</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Asesor laboral designado</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="no">-</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Responsable del ingreso de información</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Responsable del ingreso de información</th>
+        <td class="software">Cliente</td>
+        <td class="software">Cliente</td>
+        <td class="servicio">Cliente</td>
+        <td class="servicio">JR</td>
+      </tr>
+      <tr id="mth">      
+        <td>Responsable del procesamiento de liquidaciones</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Responsable del procesamiento de liquidaciones</th>
+        <td class="software">Cliente</td>
+        <td class="software">Cliente</td>
+        <td class="servicio">Cliente</td>
+        <td class="servicio">JR</td>
+      </tr>
+      <tr class="tr-empty">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td colspan="4" class="sub-title1">Módulos Disponibles</td>
+      </tr>
+      <tr id="mth">      
+        <td>Administración Personal</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Administración Personal</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Portal Colaboradores</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Portal Colaboradores</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Gestor de Contratos, Anexos y Finiquitos</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Gestor de Contratos, Anexos y Finiquitos</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Gestor de Permisos y Vacaciones</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Gestor de Permisos y Vacaciones</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr class="tr-empty">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td colspan="4" class="sub-title1">Soporte</td>        
+      </tr>
+      <tr id="mth">      
+        <td>Soporte laboral telefonico (10 horas al mes)</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Soporte laboral telefonico (10 horas al mes)</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="no">-</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Soporte laboral mail (10 horas al mes)</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Soporte laboral mail (10 horas al mes)</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="no">-</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Soporte para uso del sistema</td>
+        <td></td>        
+      </tr>
+      <tr class="last-tr igual">
+        <th>Soporte para uso del sistema</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr >
+    </table>    
+  </div>
+
+  <div class="toggle-button sub-title1">Ver tabla comparativa completa</div>
+
+  <div class="container-second-table">    
+    <div class="border-tbody-main"></div>
+    <table class="tabla-secundaria">
+      <tr class="plan-title">
+        <th>Plan</th>
+        <td><div class="btn-plan">Software <br> Básico</div></td>
+        <td><div class="mas-pedido"><div class="mas-pedido-sign">¡Más pedido!<div class="flecha-sign"></div></div><div class="btn-plan">Software<br> Premium</div></div></td>
+        <td><div class="btn-plan">Outsourcing <br>Básico</div></td>
+        <td><div class="mas-pedido"><div class="mas-pedido-sign">¡Más pedido!<div class="flecha-sign"></div></div><div class="btn-plan">Outsourcing<br> Premium</div></div></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td colspan="4"><div class="btn-consultar">Consultar Precio</div></td>        
+      </tr>
+      <tr>
+        <th></th>
+        <td colspan="4" class="sub-title1">Gestión Laboral</td>        
+      </tr>
+      <tr id="mth">      
+        <td>Preparación de cartas de aviso para termino de relación laboral</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Preparación de cartas de aviso para termino de relación laboral</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="no">-</div></td>
+        <td class="servicio"><div class="no">-</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Aviso a Inspección del Trabajo por desvinculación de un trabajador</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Aviso a Inspección del Trabajo por desvinculación de un trabajador</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="no">-</div></td>
+        <td class="servicio"><div class="no">-</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Tramitación de licencias médicas electronicas</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Tramitación de licencias médicas electronicas</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="no">-</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Tramitación de licencias médicas fisicas</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Tramitación de licencias médicas fisicas</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="no">-</div></td>
+        <td class="servicio"><div class="no">-</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr class="tr-empty">
+        <th></th>
+        <td colspan="4"></td>        
+      </tr>
+      <tr>
+        <th></th>
+        <td colspan="4" class="sub-title1">Administración de personal</td>      
+      </tr>
+      <tr id="mth">      
+        <td>Fichas del Personal</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Fichas del Personal</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Administrador de prestamos</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Administrador de prestamos</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Administrador Depósitos convenidos y APV</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Administrador Depósitos convenidos y APV</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Administrador de cargas familiares</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Administrador de cargas familiares</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Administración de trabajadores extranjeros</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Administración de trabajadores extranjeros</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr class="tr-empty">
+        <th></th>
+        <td colspan="4"></td>        
+      </tr>
+      <tr>
+        <th></th>
+        <td colspan="4" class="sub-title1">Gestor de Contratos, Anexos y Finiquitos</td>        
+      </tr>
+      <tr id="mth">      
+        <td>Administrador de Contratos y anexos</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Administrador de Contratos y anexos</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Administrador de vencimientos de contratos</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Administrador de vencimientos de contratos</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td colspan="4"></td>
+      </tr>
+        <th></th>
+        <td colspan="4" class="sub-title1">Gestor de Permisos y Vacaciones</td> 
+      </tr>
+      <tr id="mth">      
+        <td>Administrador de vacaciones</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Administrador de vacaciones</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Workflow de vacaciones (en desarrollo)</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Workflow de vacaciones (en desarrollo)</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td colspan="4" class="sub-title1">Herramientas</td>        
+      </tr>
+      <tr id="mth">      
+        <td>Simulador de sueldo</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Simulador de sueldo</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Embrutecedor de conceptos</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Embrutecedor de conceptos</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Actualización masiva de conceptos</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Actualización masiva de conceptos</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr class="tr-empty">
+        <th></th>
+        <td colspan="4"></td>        
+      </tr>
+      <tr>
+        <th></th>
+        <td colspan="4" class="sub-title1">Gestor de Ausencias y Licencias</td> 
+      </tr>
+      <tr id="mth">      
+        <td>Administrador de ausencias</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Administrador de ausencias</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Administrador de licencias</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Administrador de licencias</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Grafico de ausencia y gestión de licencias</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Grafico de ausencia y gestión de licencias</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr class="tr-empty">
+        <th></th>
+        <td colspan="4"></td>        
+      </tr>
+      <tr>
+        <th></th>
+        <td colspan="4" class="sub-title1">Proceso Mensual</td>        
+      </tr>
+      <tr id="mth">      
+        <td>Proceso Calculo Mensual de Liquidaciones</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Proceso Calculo Mensual de Liquidaciones</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Generación de Certificado de Pago de Cotizaciones Previsionales</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Generación de Certificado de Pago de Cotizaciones Previsionales</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Generación Archivo Previred</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Generación Archivo Previred</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Carga Archivo Previred</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Carga Archivo Previred</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="no">-</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Solicitud F30</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Solicitud F30</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="no">-</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Solicitud F30 1</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Solicitud F30 1</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="no">-</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr class="tr-empty">
+        <th></th>
+        <td colspan="4"></td>        
+      </tr>
+      <tr>
+        <th></th>
+        <td colspan="4" class="sub-title1">Proceso Anual</td>        
+      </tr>
+      <tr id="mth">      
+        <td>Presentación de DJ Sueldos - Honorarios - Sence - Sucursales en SII</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Presentación de DJ Sueldos - Honorarios - Sence - Sucursales en SII</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="no">-</div></td>
+        <td class="servicio"><div class="no">-</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Archivo plano para DJ Sueldos, Honorarios, Sence, Sucursales</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Archivo plano para DJ Sueldos, Honorarios, Sence, Sucursales</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Certificado anual de sueldos y honorarios</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Certificado anual de sueldos y honorarios</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Gestión de Zona Extrema</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Gestión de Zona Extrema</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Gestión de créditos franquicia Sence</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Gestión de créditos franquicia Sence</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="no">-</div></td>
+        <td class="servicio"><div class="no">-</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Reliquidación de bonos</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Reliquidación de bonos</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr class="tr-empty">
+        <th></th>
+        <td colspan="4"></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td colspan="4" class="sub-title1">Reportes</td> 
+      </tr>
+      <tr id="mth">      
+        <td>Asientos de Centralización</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Asientos de Centralización</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Generador de Libros Oficiales</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Generador de Libros Oficiales</th>
+        <td class="software"><div class="si">+</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Generador de nóminas Banco</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Generador de nóminas Banco</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Módulo de informes y gráficos</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Módulo de informes y gráficos</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr class="tr-empty">
+        <th></th>
+        <td colspan="4"></td>        
+      </tr>
+      <tr>
+        <th></th>
+        <td colspan="4" class="sub-title1">Portal de Colaboradores</td>  
+      </tr>
+      <tr id="mth">      
+        <td>Actualización de datos personales</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Actualización de datos personales</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Visualización de liquidaciones de sueldo</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Visualización de liquidaciones de sueldo</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Visualización de vacaciones</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Visualización de vacaciones</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Solicitud y aprobación de vacaciones y permisos (en desarrollo)</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Solicitud y aprobación de vacaciones y permisos (en desarrollo)</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Visualización de préstamos</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Visualización de préstamos</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Gestión de documentación de relación laboral</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Gestión de documentación de relación laboral</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Obtención de certificados sueldos y antigüedad</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Obtención de certificados sueldos y antigüedad</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Obtención de certificado de imposiciones</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Obtención de certificado de imposiciones</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr id="mth">      
+        <td>Visualización de ausencias</td>
+        <td></td>        
+      </tr>
+      <tr>
+        <th>Visualización de ausencias</th>
+        <td class="software"><div class="no">-</div></td>
+        <td class="software"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+        <td class="servicio"><div class="si">+</div></td>
+      </tr>
+      <tr class="tr-empty">
+        <th></th>
+        <td colspan="4"></td>        
+      </tr>
+      <tr class="last-tr">
+        <th></th>
+        <td colspan="4"><div class="btn-consultar">Consultar Precio</div></td>        
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
